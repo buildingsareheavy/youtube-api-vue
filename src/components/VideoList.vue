@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul class="list-group">
     <VideoListItem v-for="video in videos" v-bind:video="video" v-bind:key="video.etag"></VideoListItem>
   </ul>
 </template>
@@ -18,5 +18,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+ul {
+}
 </style>

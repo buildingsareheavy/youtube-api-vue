@@ -1,5 +1,5 @@
 <template>
-  <li class="list-group-item media">
+  <li class="list-group-item media" v-on:click="onVideoSelect">
     <img class="mr-3" v-bind:src="thumbnailUrl">
     <div class="media-body">{{ video.snippet.title }}</div>
   </li>
@@ -14,6 +14,11 @@ export default {
   computed: {
     thumbnailUrl() {
       return this.video.snippet.thumbnails.default.url;
+    }
+  },
+  methods: {
+    onVideoSelect: function() {
+      this.$emit("videoSelect", this.video);
     }
   }
 };

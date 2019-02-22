@@ -1,6 +1,11 @@
 <template>
-  <ul class="list-group">
-    <VideoListItem v-for="video in videos" v-bind:video="video" v-bind:key="video.etag"></VideoListItem>
+  <ul class="list-group col-md-4">
+    <VideoListItem
+      v-for="video in videos"
+      v-bind:video="video"
+      v-bind:key="video.etag"
+      v-on:videoSelect="onVideoSelect"
+    ></VideoListItem>
   </ul>
 </template>
 
@@ -14,11 +19,14 @@ export default {
   },
   props: {
     videos: Array //validating that we are recieving an array from the parent
+  },
+  methods: {
+    onVideoSelect: function(video) {
+      this.$emit("videoSelect", video);
+    }
   }
 };
 </script>
 
 <style scoped lang="scss">
-ul {
-}
 </style>

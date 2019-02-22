@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input v-on:input="onInput">
+    <input v-on:input="onInput" placeholder="Search">
   </div>
 </template>
 
@@ -19,6 +19,7 @@ export default {
 <style scoped lang="scss">
 input {
   width: 75%;
+  padding: 5px 10px;
 }
 div {
   text-align: center;

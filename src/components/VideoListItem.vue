@@ -6,7 +6,7 @@
 export default {
   name: "VideoListItem",
   props: {
-    video: Object
+    video: Object // validating that we are recieving an object from the parent
   }
 };
 </script>

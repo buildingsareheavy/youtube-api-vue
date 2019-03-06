@@ -41,6 +41,9 @@ li {
   border-bottom-right-radius: 30px;
   border-top: 1px solid black;
   padding-top: 20px;
+  @media screen and (max-width: 767px) {
+    margin-left: 15px;
+  }
   margin-bottom: 10px;
   &:last-child {
     margin-bottom: -10px;

@@ -65,5 +65,8 @@ h2 {
 .container {
   border-bottom: 1px solid black;
   margin-bottom: 2rem;
+  @media screen and (max-width: 767px) {
+    border-bottom: none;
+  }
 }
 </style>

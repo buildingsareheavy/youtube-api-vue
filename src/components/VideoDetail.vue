@@ -50,6 +50,9 @@ export default {
   border-bottom-right-radius: 30px;
   /* background: hsl(240, 2%, 90%); */
   background: hsl(166, 93%, 80%);
+  @media screen and (max-width: 767px) {
+    border-radius: 0;
+  }
   h2 {
     padding: 10px 0;
   }
@@ -63,5 +66,10 @@ export default {
   margin-bottom: 30px;
   width: 100%;
   font-size: 3rem;
+  @media screen and (max-width: 767px) {
+    padding: 25% 0;
+    font-size: 1.5rem;
+    margin-bottom: 45px;
+  }
 }
 </style>

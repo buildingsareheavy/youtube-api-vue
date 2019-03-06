@@ -27,9 +27,29 @@ export default {
 <style scoped lang="scss">
 li {
   display: flex;
+  transition: all 0.2s;
   &:hover {
+    background-color: hsl(354, 100%, 85%);
     cursor: pointer;
-    background-color: #eee;
   }
+}
+.list-group-item {
+  border: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-top: 1px solid black;
+  padding-top: 20px;
+  margin-bottom: 10px;
+  &:last-child {
+    margin-bottom: -10px;
+  }
+  &:first-child {
+    margin-top: -21px;
+  }
+}
+.media-body {
+  font-size: 0.85rem;
 }
 </style>

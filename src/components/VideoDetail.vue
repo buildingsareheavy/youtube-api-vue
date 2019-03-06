@@ -17,7 +17,14 @@
         <p>{{ video.snippet.description }}</p>
       </div>
     </div>
-    <div v-else></div>
+    <div v-else>
+      <div class="no-video-selected">
+        <ol>
+          <li>Search Above</li>
+          <li>Select a Video</li>
+        </ol>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -38,12 +45,23 @@ export default {
 
 <style lang="scss" scoped>
 .details {
-  margin-top: 10px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  padding: 1.25rem 2rem;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  /* background: hsl(240, 2%, 90%); */
+  background: hsl(166, 93%, 80%);
+  h2 {
+    padding: 10px 0;
+  }
 }
-h1 {
-  font-size: 2rem;
+.no-video-selected {
+  padding: 32% 0;
+  text-align: center;
+  background: hsl(166, 93%, 80%);
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  margin-bottom: 30px;
+  width: 100%;
+  font-size: 3rem;
 }
 </style>

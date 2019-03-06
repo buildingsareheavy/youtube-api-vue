@@ -17,6 +17,9 @@ export default {
   components: {
     VideoListItem
   },
+  data: {
+    video: null
+  },
   props: {
     videos: Array //validating that we are recieving an array from the parent
   },
@@ -29,4 +32,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+ul {
+  margin-bottom: 20px;
+}
 </style>

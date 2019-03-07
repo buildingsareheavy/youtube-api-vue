@@ -1,5 +1,5 @@
 # youtube-project-vue
 
-Using the Youtube Data API with Vue CLI.
+A clean and colorful Youtube clone, using the Youtube Data API with Vue CLI and Axios.
 
-Viewable at [https://stoic-joliot-625933.netlify.com/](https://stoic-joliot-625933.netlify.com/)
+Viewable at [https://simpleyoutube.xyz/](https://simpleyoutube.xyz)

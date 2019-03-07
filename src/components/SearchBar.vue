@@ -22,6 +22,8 @@ input {
   padding: 10px 20px;
   border: none;
   border-bottom: 1px solid black;
+  border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   transition: all 0.2s;

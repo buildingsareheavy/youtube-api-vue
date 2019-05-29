@@ -1,5 +1,11 @@
 <template>
-  <div>
+  <v-flex md4 mx-2>
+    <v-card>
+      <v-card-title>
+        <h2>Results</h2>
+      </v-card-title>
+    </v-card>
+
     <transition-group name="list" tag="ul">
       <VideoListItem
         v-for="video in videos"
@@ -8,7 +14,7 @@
         v-on:videoSelect="onVideoSelect"
       ></VideoListItem>
     </transition-group>
-  </div>
+  </v-flex>
 </template>
 
 <script>
@@ -34,4 +40,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+ul,
+li {
+  padding: 0;
+}
 </style>

@@ -1,12 +1,15 @@
 <template>
-  <div id="app">
+  <v-app>
     <SearchBar v-on:termChange="onTermChange"></SearchBar>
-    <div>
+    <v-layout row wrap mt-5 pt-5 mx-4>
+      <v-spacer></v-spacer>
       <VideoDetail v-bind:video="selectedVideo"></VideoDetail>
+      <v-spacer></v-spacer>
       <VideoList v-bind:videos="videos" v-on:videoSelect="onVideoSelect"></VideoList>
-    </div>
+      <v-spacer></v-spacer>
+    </v-layout>
     <SearchHistory/>
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -55,9 +58,29 @@ export default {
 </script>
 
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400i,400,600i,600&display=swap");
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  font-family: "IBM Plex Mono", monospace;
+  p,
+  input,
+  label,
+  div {
+    font-family: "IBM Plex Mono", monospace;
+    font-style: italic;
+    font-weight: 400;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-style: italic;
+  }
 }
 </style>

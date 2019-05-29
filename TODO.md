@@ -25,3 +25,11 @@
 - [ ] Move away from Bootstrap grid, and move to CSS grid. This way I can do stuff like let the search results get as long as they need to be, while the search history stays under the video result.
 
 - [ ] Add scss global variables file.
+
+---
+
+### May 28rd - Thursday
+
+- [ ] Refactor in Vuetify
+
+- [ ] Add Dark Mode

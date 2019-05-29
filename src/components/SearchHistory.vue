@@ -10,10 +10,5 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-#searchHistory {
-  margin-top: 20px;
-  padding: 30px;
-  border-top: 1px solid black;
-}
+<style lang="scss">
 </style>

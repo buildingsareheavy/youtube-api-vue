@@ -5,6 +5,7 @@
       <VideoDetail v-bind:video="selectedVideo"></VideoDetail>
       <VideoList v-bind:videos="videos" v-on:videoSelect="onVideoSelect"></VideoList>
     </div>
+    <SearchHistory/>
   </div>
 </template>
 
@@ -13,15 +14,16 @@ import axios from "axios";
 import SearchBar from "./components/SearchBar";
 import VideoList from "./components/VideoList";
 import VideoDetail from "./components/VideoDetail";
+import SearchHistory from "./components/SearchHistory";
 const API_KEY = "AIzaSyA0hi0QYO7plQZp5gynU36p39gmJUqkeXU";
-// const API_KEY = "AIzaSyDT-efffIVbAzJw7P3dnEYvSGulYIj6EDM";
 
 export default {
   name: "App",
   components: {
     SearchBar,
     VideoList,
-    VideoDetail
+    VideoDetail,
+    SearchHistory
   },
   data: function() {
     return {
@@ -64,10 +66,28 @@ h2 {
   font-weight: 700;
 }
 .container {
-  border-bottom: 1px solid black;
   margin-bottom: 2rem;
   @media screen and (max-width: 767px) {
     border-bottom: none;
+  }
+}
+// RESETS
+@media screen and (max-width: 767px) {
+  .row,
+  .col-md-8,
+  .col-md-4 {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+  }
+  .row {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .col-md-4 {
+    padding-top: 40px;
   }
 }
 </style>

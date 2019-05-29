@@ -13,16 +13,14 @@
         ></iframe>
       </div>
       <div class="details">
-        <h2>{{ video.snippet.title }}</h2>
+        <h2 v-html="video.snippet.title"></h2>
         <p>{{ video.snippet.description }}</p>
       </div>
     </div>
     <div v-else>
       <div class="no-video-selected">
-        <ol>
-          <li>Search Above</li>
-          <li>Select a Video</li>
-        </ol>
+        <h1>Welcome To Simple Youtube</h1>
+        <p>A clean and colorful Youtube experience.</p>
       </div>
     </div>
   </div>
@@ -58,18 +56,26 @@ export default {
   }
 }
 .no-video-selected {
-  padding: 32% 0;
+  padding: 32%;
   text-align: center;
   background: hsl(166, 93%, 80%);
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
   margin-bottom: 30px;
   width: 100%;
-  font-size: 3rem;
+  font-size: 2rem 0;
   @media screen and (max-width: 767px) {
     padding: 25% 0;
     font-size: 1.5rem;
     margin-bottom: 45px;
+  }
+  h1,
+  p {
+    padding: 1rem;
+  }
+  ul {
+    padding: 0;
+    list-style: none;
   }
 }
 </style>

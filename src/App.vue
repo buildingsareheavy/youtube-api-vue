@@ -2,13 +2,9 @@
   <v-app>
     <SearchBar v-on:termChange="onTermChange"></SearchBar>
     <v-layout row wrap mt-5 pt-5 mx-4>
-      <v-spacer></v-spacer>
       <VideoDetail v-bind:video="selectedVideo"></VideoDetail>
-      <v-spacer></v-spacer>
-      <VideoList v-bind:videos="videos" v-on:videoSelect="onVideoSelect"></VideoList>
-      <v-spacer></v-spacer>
+      <VideoList id="results" v-bind:videos="videos" v-on:videoSelect="onVideoSelect"></VideoList>
     </v-layout>
-    <SearchHistory/>
   </v-app>
 </template>
 
@@ -17,22 +13,21 @@ import axios from "axios";
 import SearchBar from "./components/SearchBar";
 import VideoList from "./components/VideoList";
 import VideoDetail from "./components/VideoDetail";
-import SearchHistory from "./components/SearchHistory";
 const API_KEY = "AIzaSyA0hi0QYO7plQZp5gynU36p39gmJUqkeXU";
+import VueScrollTo from 'vue-scrollto'
 
 export default {
   name: "App",
   components: {
     SearchBar,
     VideoList,
-    VideoDetail,
-    SearchHistory
+    VideoDetail
   },
   data: function() {
     return {
       videos: [], // an array of objects, where every object represents one video
       selectedVideo: null
-    };
+    }
   },
   methods: {
     onVideoSelect: function(video) {
@@ -45,42 +40,37 @@ export default {
             key: API_KEY,
             type: "video",
             part: "snippet",
+            maxResults: "10",
             q: searchTerm // query
           }
         })
         .then(response => {
           this.videos = response.data.items; // response.data is the data from the api response, not the data we called above methods
-          console.log(response.data);
+          // console.log(response.data);
         });
+        VueScrollTo.scrollTo('#results', 800, {offset: -80 });
     }
   }
 };
 </script>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400i,400,600i,600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu:500&display=swap");
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  font-family: "IBM Plex Mono", monospace;
-  p,
-  input,
-  label,
-  div {
-    font-family: "IBM Plex Mono", monospace;
-    font-style: italic;
-    font-weight: 400;
+  background: #FFECB3;
+  padding-top: 25px;
+  @media screen and (max-width: 959px) {
+    padding-top: 10px;
   }
   h1,
   h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 600;
-    font-style: italic;
+  .v-card__title {
+    font-family: "Ubuntu", sans-serif;
   }
+}
+div {
+  font-family: "Ubuntu Mono", monospace;
 }
 </style>

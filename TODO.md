@@ -10,26 +10,32 @@
 
 - [ ] Give `Video List Items` pagination.
 
-- [ ] When a user clicks on a `Video List Item`, scroll to the video.
+- [x] When a user clicks on a `Video List Item`, scroll to the video.
 
-- [ ] When user searches, scroll to list.
+- [x] When user searches, scroll to list.
 
-- [ ] Make search `position: fixed` on mobile
+- [x] Make search `position: fixed` on mobile
 
-- [ ] Change welcome text to something more appealing.
+- [x] Change welcome text to something more appealing.
 
-- [ ] Make colors gradients instead of flat colors. Maybe add drop-shadows too.
+- [x] Make colors gradients instead of flat colors. Maybe add drop-shadows too. _I tried it, but still prefer the solid colors. Moved to Vuetify_
 
 - [ ] Add search history.
 
-- [ ] Move away from Bootstrap grid, and move to CSS grid. This way I can do stuff like let the search results get as long as they need to be, while the search history stays under the video result.
+- [x] Move away from Bootstrap grid, and move to CSS grid. This way I can do stuff like let the search results get as long as they need to be, while the search history stays under the video result. _Moved to Vuetify_
 
 - [ ] Add scss global variables file.
 
 ---
 
-### May 28rd - Thursday
+### May 28rd - Tuesday
 
-- [ ] Refactor in Vuetify
+- [x] Refactor in Vuetify
 
 - [ ] Add Dark Mode
+
+---
+
+### May 30th - Thursday
+
+- [ ] Fix `keyup.enter` to scroll to `#results`.

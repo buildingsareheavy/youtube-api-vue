@@ -39,3 +39,7 @@
 ### May 30th - Thursday
 
 - [ ] Fix `keyup.enter` to scroll to `#results`.
+
+- [ ] add search history below search bar.
+
+- [ ] figure out how to get rid of keyboard on mobile when submitting form.

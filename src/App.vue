@@ -13,7 +13,8 @@ import axios from "axios";
 import SearchBar from "./components/SearchBar";
 import VideoList from "./components/VideoList";
 import VideoDetail from "./components/VideoDetail";
-const API_KEY = "AIzaSyA0hi0QYO7plQZp5gynU36p39gmJUqkeXU";
+// const API_KEY = "AIzaSyA0hi0QYO7plQZp5gynU36p39gmJUqkeXU";
+const API_KEY = "AIzaSyDT-efffIVbAzJw7P3dnEYvSGulYIj6EDM";
 import VueScrollTo from 'vue-scrollto'
 
 export default {

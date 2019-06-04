@@ -8,7 +8,7 @@ Vue.config.productionTip = false;
 
 Vue.use(VueScrollTo);
 Vue.use(Vuetify, {
-  iconfont: 'mdi',
+  iconfont: 'md',
   theme: {
     primary: '#212121',
   },

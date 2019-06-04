@@ -49,7 +49,7 @@ export default {
           this.videos = response.data.items; // response.data is the data from the api response, not the data we called above methods
           // console.log(response.data);
         });
-        VueScrollTo.scrollTo('#results', 800, {offset: -80 });
+        VueScrollTo.scrollTo('#results', 800, {offset: -100 });
     }
   }
 };

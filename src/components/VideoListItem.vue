@@ -1,11 +1,23 @@
 <template>
-  <li class="list-group-item media" v-on:click="onVideoSelect">
-    <img class="mr-3" v-bind:src="thumbnailUrl">
-    <div class="media-body" v-html="video.snippet.title"></div>
+  <li v-on:click="onVideoSelect">
+    <v-card flat hover color="amber lighten-2">
+      <v-layout row wrap>
+        <v-flex xs6>
+          <v-responsive>
+            <img class="pa-3" v-bind:src="thumbnailUrl">
+          </v-responsive>
+        </v-flex>
+        <v-flex xs6>
+          <v-card-title v-html="video.snippet.title"></v-card-title>
+        </v-flex>
+      </v-layout>
+    </v-card>
   </li>
 </template>
 
 <script>
+import VueScrollTo from 'vue-scrollto'
+
 export default {
   name: "VideoListItem",
   props: {
@@ -19,55 +31,31 @@ export default {
   methods: {
     onVideoSelect: function() {
       this.$emit("videoSelect", this.video);
+      VueScrollTo.scrollTo('#app', 800, {offset: -80 });
     }
   }
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 li {
-  display: flex;
-  transition: all 0.2s;
-  &:hover {
-    background-color: hsl(354, 100%, 85%);
-    cursor: pointer;
+  list-style: none;
+  border-top: 2px solid #FFB300; // amber darken-1
+  &:first-of-type {
+    border-top: 2px solid #FFC107; // amber
   }
+  &:hover {
+    border-top: 2px solid #ffd54f; // amber lighten-2
+    div {
+    z-index: 1;
+    }
+  }
+}
+.v-card--hover:hover {
+  box-shadow: 0 5px 5px -3px #ffc400,0 8px 10px 1px rgba(0,0,0,0.25),0 3px 14px 2px #FFB300
 }
 img {
-  width: 50%;
-}
-.list-group-item {
-  border: none;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  border-top: 1px solid black;
-  padding-top: 20px;
-  @media screen and (max-width: 767px) {
-    margin-left: 15px;
-  }
-  margin-bottom: 10px;
-  &:last-child {
-    margin-bottom: -10px;
-  }
-  &:first-child {
-    margin-top: -21px;
-  }
-}
-.media-body {
-  font-size: 0.85rem;
-}
-
-@media screen and (max-width: 991px) {
-  li {
-    display: block; // resets from flex
-  }
-  img {
-    float: left; // allows text to wrap image
-  }
-  .list-group-item {
-    padding: 10px;
-  }
+  width: 100%;
+  height: 100%;
 }
 </style>

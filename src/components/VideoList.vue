@@ -1,6 +1,13 @@
 <template>
-  <div class="col-md-4">
-    <transition-group name="list" class="list-group" tag="ul">
+  <v-flex md4>
+    <v-flex mx-2>
+    <v-card flat color="amber" v-if="this.videos != false">
+      <v-card-title>
+        <h2>Results</h2>
+      </v-card-title>
+    </v-card>
+
+    <transition-group name="list" tag="ul">
       <VideoListItem
         v-for="video in videos"
         v-bind:video="video"
@@ -8,7 +15,8 @@
         v-on:videoSelect="onVideoSelect"
       ></VideoListItem>
     </transition-group>
-  </div>
+  </v-flex>
+  </v-flex>
 </template>
 
 <script>
@@ -19,8 +27,10 @@ export default {
   components: {
     VideoListItem
   },
-  data: {
+  data: function() {
+    return {
     video: null
+    }
   },
   props: {
     videos: Array //validating that we are recieving an array from the parent
@@ -33,24 +43,20 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-h2 {
-  font-size: 1rem;
-  /* transform: translateY(-1rem); */
-}
-ul {
-  margin-bottom: 20px;
-  max-height: 620px; // Prevents jumping when results transition
+<style lang="scss" scoped>
+ul,
+li {
+  padding: 0;
 }
 .list-enter,
 .list-leave-to {
   opacity: 0;
-  transform: scale(0);
+  transform: scale(1, 0);
   transition: all 0.2s;
 }
 .list-enter-to {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(1, 1);
   transition: all 0.2s;
   transition-delay: 0.5s;
 }
